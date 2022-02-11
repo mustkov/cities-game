@@ -4,6 +4,7 @@ const SET_FETCH_ERROR = "SET_FETCH_ERROR";
 const SET_CITY = "SET_CITY";
 const SET_DONE_CITIES = "SET_DONE_CITIES";
 const SET_LAST_LETTER = "SET_LAST_LETTER";
+const SET_NEW_CITY = "SET_NEW_CITY";
 
 const defaultState = {
   city: "",
@@ -12,14 +13,20 @@ const defaultState = {
   isFetchError: false,
   doneCities: [],
   lastLetter: "",
+  newCity: "",
 };
 
 export default function reposReducer(state = defaultState, action) {
   switch (action.type) {
+    case SET_NEW_CITY:
+      return {
+        ...state,
+        newCity: action.payload,
+      };
     case SET_DONE_CITIES:
       return {
         ...state,
-        doneCities: [...state.doneCities, action.payload],
+        doneCities: action.payload,
       };
     case SET_LAST_LETTER:
       return {
@@ -55,10 +62,6 @@ export const setRepos = (repos) => ({
   type: SET_REPOS,
   payload: repos,
 });
-export const setCurrentCity_Redux = (city) => ({
-  type: SET_CITY,
-  payload: city,
-});
 export const setIsFetching = (bool) => ({
   type: SET_IS_FETCHING,
   payload: bool,
@@ -74,4 +77,8 @@ export const setDoneCities = (city) => ({
 export const setLastLetter = (symbol) => ({
   type: SET_LAST_LETTER,
   payload: symbol,
+});
+export const setNewCity = (city) => ({
+  type: SET_NEW_CITY,
+  payload: city,
 });
