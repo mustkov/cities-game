@@ -23,15 +23,12 @@ import takeFirstLetter from "./functions/takeFirstLetter";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import ModalWindow from "./components/ModalWindow/ModalWindow";
-import UsedCities from "./components/UsedCities/UsedCities";
 import Score from "./components/Score/Score";
-import pictureCity from "./assets/images/city.svg"
 
 function App() {
   const dispatch = useDispatch();
   const repos = useSelector((state) => state.repos);
   const doneCities = useSelector((state) => state.repos.doneCities);
-  const newCity = useSelector((state) => state.repos.newCity);
   const startBaseCities = useSelector((state) => state.repos.startBaseCities);
 
   const isMount = useIsMount();
@@ -178,7 +175,7 @@ function App() {
         />
         <Button
           onClick={mainProcessing}
-          // type={"submit"}
+          type={"submit"}
           className={"btn btn-outline-secondary"}
           id={"button-addon2"}
           title={"Отправить"}
@@ -194,8 +191,7 @@ function App() {
           disabled={disabled}
         />
       </form>
-      <Main picture={pictureCity} doneCities={doneCities}/>
-      {/* <UsedCities doneCities={doneCities} /> */}
+      <Main doneCities={doneCities}/>
       <ModalWindow
         smShow={smShow}
         modalOff={modalOff}
@@ -203,7 +199,6 @@ function App() {
         title={"Подсказка"}
       />
       <Score score={score.bestResult}/>
-
     </div>
   );
 }
