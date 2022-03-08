@@ -9,7 +9,7 @@ export const getRepository = () => {
   return async (dispatch) => {
     try {
       dispatch(setIsFetching(true));
-      const response = await axios.get("base/cities.json");
+      const response = await axios.get("base/cities1.json");
       dispatch(setRepos(response.data.city));
     } catch (e) {
       console.log(e, new Error("Ошибка запроса API"));

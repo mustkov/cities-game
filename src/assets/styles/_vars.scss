@@ -1,0 +1,11 @@
+// @use "sas";
+
+$containerWidth: 1200;
+$containerPadding: 40;
+$containerSidePadding: calc(40px / 2);
+$breakpoint992: 991.98 + px;
+$breakpoint768: 767.98 + px;
+$breakpoint480: 479.98 + px;
+
+$widthBlockCity: 400 + px;
+$widthBlockCityAdaptive: 350 + px;
