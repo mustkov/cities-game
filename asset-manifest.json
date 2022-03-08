@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/cities-game/static/css/main.ff8ae616.css",
+    "main.js": "/cities-game/static/js/main.0d70b006.js",
+    "static/media/city.svg": "/cities-game/static/media/city.aa38112b83e0d7ef49f6.svg",
+    "index.html": "/cities-game/index.html",
+    "main.ff8ae616.css.map": "/cities-game/static/css/main.ff8ae616.css.map",
+    "main.0d70b006.js.map": "/cities-game/static/js/main.0d70b006.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff8ae616.css",
+    "static/js/main.0d70b006.js"
+  ]
+}
