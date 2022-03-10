@@ -2,7 +2,6 @@ import React from "react";
 import Search from "../Search/Search"
 
 export default function Main({doneCities}) {
-  console.log(doneCities)
   const currentCity = doneCities[doneCities.length - 1]
   return (
     <div className="main" >

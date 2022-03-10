@@ -40,8 +40,8 @@ function App() {
   const [checkLetter, setCheckLetter] = useState("");
   const [promptCity, setPromptCity] = useState("");
   const [smShow, setSmShow] = useState(false);
-  const [alert, setAlert] = useState({status: false, message: ''});
-  const [score, setScore] = useState({currentResult: 0, bestResult: 0});
+  const [alert, setAlert] = useState({ status: false, message: "" });
+  const [score, setScore] = useState({ currentResult: 0, bestResult: 0 });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,7 +49,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getRepository());
-    setScore({...score, bestResult: loadLocaleStorage()})
+    setScore({ ...score, bestResult: loadLocaleStorage() });
   }, []);
 
   useEffect(() => {
@@ -75,9 +75,9 @@ function App() {
   }, [donesCities]);
 
   useEffect(() => {
-    if(score.currentResult > score.bestResult) {
-      saveLocaleStorage(score.currentResult)
-      setScore({...score, bestResult: score.currentResult})
+    if (score.currentResult > score.bestResult) {
+      saveLocaleStorage(score.currentResult);
+      setScore({ ...score, bestResult: score.currentResult });
     }
   }, [score.currentResult]);
 
@@ -89,7 +89,10 @@ function App() {
     if (statusCity) {
       const firstLetter = takeFirstLetter(city);
       if (!(firstLetter === checkLetter)) {
-        setAlert({status: true, message: "Не по правилам! Введен город не на последнюю букву!"});
+        setAlert({
+          status: true,
+          message: "Не по правилам! Введен город не на последнюю букву!",
+        });
         return null;
       }
     }
@@ -99,7 +102,7 @@ function App() {
           setStatusCity(data);
         },
         (data) => {
-          throw setAlert({status: true, message: data});
+          throw setAlert({ status: true, message: data });
         }
       )
       .then(() =>
@@ -115,15 +118,15 @@ function App() {
           setLastLet(data);
         })
       );
-      setScore({...score, currentResult: score.currentResult + 1})
+    setScore({ ...score, currentResult: score.currentResult + 1 });
   };
 
   const saveLocaleStorage = (number) => {
-    localStorage.setItem('score', number);
-  }
+    localStorage.setItem("score", number);
+  };
   const loadLocaleStorage = () => {
-    return localStorage.getItem('score')
-  }
+    return localStorage.getItem("score");
+  };
 
   const prompt = useCallback(() => {
     const a = () =>
@@ -191,14 +194,17 @@ function App() {
           disabled={disabled}
         />
       </form>
-      <Main doneCities={doneCities}/>
       <ModalWindow
         smShow={smShow}
         modalOff={modalOff}
         value={promptCity}
         title={"Подсказка"}
       />
-      <Score score={score.bestResult}/>
+      <div className="main_info">
+        <Main doneCities={doneCities} />
+        <Score score={score.bestResult} />
+      </div>
+      
     </div>
   );
 }
