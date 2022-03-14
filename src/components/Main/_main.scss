@@ -1,6 +1,6 @@
 .main {
   display: flex;
-  background-position: center;
+  background-position: center !important;
   justify-content: center;
   background-size: $widthBlockCity 150px !important;
   background: url(../../assets/images/city.svg) no-repeat;
