@@ -200,10 +200,11 @@ function App() {
         value={promptCity}
         title={"Подсказка"}
       />
-      <div className="main_info">
-        <Main doneCities={doneCities} />
-        <Score score={score.bestResult} />
-      </div>
+      <Main doneCities={doneCities} />
+      <Score score={score.bestResult} />
+      {/* <div className="main_info">
+        
+      </div> */}
       
     </div>
   );

@@ -1,5 +1,7 @@
 .main {
   display: flex;
+  background-position: center;
+  justify-content: center;
   background-size: $widthBlockCity 150px !important;
   background: url(../../assets/images/city.svg) no-repeat;
   height: 150px;
@@ -46,5 +48,5 @@
 }
 .main_info {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
 }
